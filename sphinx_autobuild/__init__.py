@@ -168,7 +168,7 @@ class SphinxBuilder(object):
         sys.stdout.write('-' * (81 - len(pre)))
         sys.stdout.write('\n')
 
-        args = ['sphinx'] + self._args
+        args = [sys.executable, '-msphinx'] + self._args
         if pty:
             master, slave = pty.openpty()
             stdout = os.fdopen(master)
